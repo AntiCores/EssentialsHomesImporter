@@ -56,12 +56,13 @@ class EssentialsHomesImporter extends PluginBase{
 										}
 									}
 
-									$x = $data[0];
-									$y = $data[1];
-									$z = $data[2];
-									$levelName = $data[3];
-									$yaw = $data[4];
-									$pitch = $data[5];
+									$homeName = (string) $homeName;
+									$x = (int) $data[0];
+									$y = (int) $data[1];
+									$z = (int) $data[2];
+									$levelName = (string) $data[3];
+									$yaw = (float) $data[4];
+									$pitch = (float) $data[5];
 
 									$location = new Location($x, $y, $z, $yaw, $pitch, $this->getServer()->getLevelByName($levelName));
 									$this->easyHomes->getProvider()->setHome($playerName, $homeName, $location, $yaw, $pitch);
